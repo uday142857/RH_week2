@@ -1,6 +1,5 @@
 const http = require("http");
 const fs = require("fs");
-const { error } = require("console");
 // const cors = require("cors")
 
 const server = http.createServer((req, res) => {
@@ -21,7 +20,7 @@ const server = http.createServer((req, res) => {
         res.end(data);
       }
     });
-  }else if("/data"){
+  } else if (req.url == "/data") {
     fs.readFile("../Client/data.html", "utf-8", (error, data) => {
       if (error) {
         res.end("Something Error");
